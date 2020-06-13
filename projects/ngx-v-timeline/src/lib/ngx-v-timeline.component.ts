@@ -8,6 +8,9 @@ import { TimelineItem } from '../public-api';
 })
 export class NgxVTimelineComponent implements OnInit {
   list: TimelineItem[] = [];
+  color?: string = '#2a2b35';
+
+
   constructor() {}
 
   @Input()
@@ -15,11 +18,17 @@ export class NgxVTimelineComponent implements OnInit {
     this.list = list;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.colorUpdate();
+  }
 
   action(item: TimelineItem) {
     if (item.command) {
       item.command();
     }
+  }
+
+  colorUpdate(){
+    document.documentElement.style.setProperty(`--color-bg`, this.color); //suffix may be px or ''
   }
 }
