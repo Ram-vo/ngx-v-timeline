@@ -1,24 +1,68 @@
 # NgxVTimeline
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.11.
+## Installation
 
-## Code scaffolding
+```javascript
+$ npm i ngx-v-timeline
+```
+## Usage
 
-Run `ng generate component component-name --project ngx-v-timeline` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-v-timeline`.
-> Note: Don't forget to add `--project ngx-v-timeline` or else it will be added to the default project in your `angular.json` file. 
+### Import
 
-## Build
+```javascript
+import { NgxVTimelineModule } from 'ngx-v-timeline';
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    NgxVTimelineModule
+    ...
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+### Component
 
-Run `ng build ngx-v-timeline` to build the project. The build artifacts will be stored in the `dist/` directory.
+```javascript
+import { TimelineItem } from 'ngx-v-timeline';
 
-## Publishing
+...
+ items: TimelineItem[] = [];
+  popupMessage = 'Hello World';
+ 
+  ngOnInit(): void {
+    const self = this;
+ 
+    this.items.push({
+      label: 'Action',
+      icon: 'fa fa-calendar-plus-o',
+      styleClass: 'teste',
+      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+      title: 'June 29, 2020, 10:12',
+      command() {
+        alert(`test: ${self.popupMessage}`);
+      }
+    });
+ 
+    this.items.push({
+      label: 'Action',
+      icon: 'fa fa-plus',
+      styleClass: 'teste',
+      content: `Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex ea commodo consequat.`,
+      title: 'June 08, 2020, 12:00',
+      command() {
+        alert('Action!');
+      }
+    });
+  }
+```
+### Template
 
-After building your library with `ng build ngx-v-timeline`, go to the dist folder `cd dist/ngx-v-timeline` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test ngx-v-timeline` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```html
+<lib-ngx-v-timeline [(items)]="items" [color]="gray" ></lib-ngx-v-timeline>
+```
