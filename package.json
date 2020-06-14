@@ -1,6 +1,7 @@
 {
   "name": "ngx-v-timeline",
   "version": "0.0.0",
+  "description": "A simple and easy to customize Angular Timeline Component",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -45,5 +46,21 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"
-  }
+  },
+  "keywords": [
+    "angular",
+    "typescript",
+    "timeline",
+    "vertical",
+    "responsive",
+    "vertical-timeline",
+    "css",
+    "chronology"
+  ],
+  "author": "Ramon Valdes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MrRaymondVO/ngx-v-timeline/issues"
+  },
+  "homepage": "https://github.com/MrRaymondVO/ngx-v-timeline#readme"
 }

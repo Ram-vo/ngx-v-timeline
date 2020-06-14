@@ -1,5 +1,7 @@
 # NgxVTimeline
 
+A simple and responsive easy to customize Angular Timeline Component
+
 ## Installation
 
 ```javascript
